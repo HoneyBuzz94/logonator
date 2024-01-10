@@ -1,9 +1,6 @@
 <svg version="1.1"
     width="300" height="200"
     xmlns="http://www.w3.org/2000/svg">
-
-
-<rect x="50" y="0" width="200" height="200" fill="#9999DD"/>
-<text x="150" y="120" font-size="60" text-anchor="middle" fill="purple">V</text>
-
+<rect x="50" y="0" width="200" height="200" fill="fuchsia"/>
+<text x="150" y="120" font-size="60" text-anchor="middle" fill="yellow">VAL</text>
 </svg>

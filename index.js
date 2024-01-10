@@ -1,7 +1,7 @@
 // Import packages
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Shape = require('./lib/shapes.js');
+const { Square, Circle, Triangle } = require('./lib/shapes.js');
 
 // Define global variables
 const colors = ['aqua', 'black', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'red', 'silver', 'teal', 'white', 'yellow'];
@@ -35,7 +35,7 @@ const questions = [
 
 // Verify text length
 function textVerifier(input){
-    if(input.length<3){
+    if(input.length<=3){
         return true;
     }else{
         return 'Maximum charcter limit is 3.';
@@ -60,15 +60,17 @@ function colorVerifier(input){
 function createLogo(data){
     // Define local variables
     let logo;
-    let shape = new Shape();
 
     // Assign logo values based on shape selected
     if(data.shape=='Square'){
-        logo = shape.square(data.shapeColor,data.textColor,data.text);
+        const square = new Square();
+        logo = square.render(data.shapeColor,data.textColor,data.text);
     }else if(data.shape=='Circle'){
-        logo = shape.circle(data.shapeColor,data.textColor,data.text);
+        const circle = new Circle();
+        logo = circle.render(data.shapeColor,data.textColor,data.text);
     }else if(data.shape=='Triangle'){
-        logo = shape.triangle(data.shapeColor,data.textColor,data.text);
+        const triangle = new Triangle();
+        logo = triangle.render(data.shapeColor,data.textColor,data.text);
     };
 
      let svgFormat =
